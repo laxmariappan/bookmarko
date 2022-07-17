@@ -9,6 +9,9 @@
 # testing
 /coverage
 
+#cache
+.turbo
+
 # misc
 .DS_Store
 *.pem
@@ -20,21 +23,22 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
-.env*.local
+.env*
 
 out/
 build/
 dist/
 
-# plasmo
+# vercel
+.vercel
+/.next/
+/out/
+
+# plasmo - https://www.plasmo.com
 .plasmo
+
+# bpp - http://bpp.browser.market/
+keys.json
 
 # typescript
 .tsbuildinfo
-
-# Lockfiles - See https://github.com/PlasmoHQ/p1asm0
-pnpm-lock.yaml
-package-lock.json
-yarn.lock
-
-.turbo

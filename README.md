@@ -1,48 +1,33 @@
-<p align="center">
-  <a href="https://plasmo.com">
-    <img alt="plasmo logo" width="75%" src="https://www.plasmo.com/assets/banner-black-on-white.png" />
-  </a>
-</p>
-
-<p align="center">
-  <a aria-label="License" href="./LICENSE">
-    <img alt="See License" src="https://img.shields.io/npm/l/plasmo"/>
-  </a>
-  <a aria-label="Twitter" href="https://www.twitter.com/plasmohq">
-    <img alt="Follow PlasmoHQ on Twitter" src="https://img.shields.io/twitter/follow/plasmohq?logo=twitter"/>
-  </a>
-  <a aria-label="Twitch Stream" href="https://www.twitch.tv/plasmohq">
-    <img alt="Watch our Live DEMO every Friday" src="https://img.shields.io/twitch/status/plasmohq?logo=twitch&logoColor=white"/>
-  </a>
-  <a aria-label="Discord" href="https://www.plasmo.com/s/d">
-    <img alt="Join our Discord for support and chat about our projects" src="https://img.shields.io/discord/946290204443025438?logo=discord&logoColor=white"/>
-  </a>
-</p>
-
-# Plasmo Framework Examples
-
-This repository showcases what's possible with the [Plasmo Framework](https://github.com/PlasmoHQ/plasmo)!
+This is a [Plasmo extension](https://docs.plasmo.com/) project bootstrapped with [`plasmo init`](https://www.npmjs.com/package/plasmo).
 
 ## Getting Started
 
-The easiest way to get hacking on the Plasmo Framework is to run the `plasmo init` command!
+First, run the development server:
 
-```sh
-pnpm dlx plasmo init
-# OR npm v7
-npm x plasmo init
+```bash
+pnpm dev
+# or
+npm run dev
 ```
 
-This will get you set up with a scaffolded project with everything you need to get started.
+Open your browser and load the appropriate development build. For example, if you are developing for the chrome browser, using manifest v3, use: `build/chrome-mv3-dev`.
 
-## Filing an issue to Request/Improve an Example
+You can start editing the popup by modifying `popup.tsx`. It should auto-update as you make changes. To add an options page, simply add a `options.tsx` file to the root of the project, with a react component default exported. Likewise to add a content page, add a `content.ts` file to the root of the project, importing some module and do some logic, then reload the extension on your browser.
 
-Please visit this [issue form](https://github.com/PlasmoHQ/plasmo/issues/new?assignees=&labels=documentation&template=2.example.yml&title=EXP+%7C+) in the [plasmo repo](https://github.com/PlasmoHQ/plasmo). Thanks 😀
+For further guidance, [visit our Documentation](https://docs.plasmo.com/)
 
-## Documentation
+## Making production build
 
-Check out our [documentation](https://docs.plasmo.com) to get a deeper look into what the framework offers.
+Run the following:
 
-# License
+```bash
+pnpm build
+# or
+npm run build
+```
 
-[MIT](./LICENSE) ⭐ [Plasmo](https://www.plasmo.com)
+This should create a production bundle for your extension, ready to be zipped and published to the stores.
+
+## Submit to the webstores
+
+The easiest way to deploy your Plasmo extension is to use the built-in [bpp](https://bpp.browser.market) GitHub action. Prior to using this action however, make sure to build your extension and upload the first version to the store to establish the basic credentials. Then, simply follow [this setup instruction](https://docs.plasmo.com/workflows#submit-your-extension) and you should be on your way for automated submission!
