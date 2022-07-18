@@ -17,7 +17,27 @@ function IndexPopup() {
   const [isSaved, setIsSaved] = useState(false)
 
   async function saveData(bookmark) {
-    console.log(bookmark)
+    const params = {
+      title: bookmark.title,
+      status: "publish",
+      excerpt: bookmark.url,
+      content: bookmark.notes,
+      tags: [3, 4]
+    }
+    const options = {
+      method: "POST",
+      body: JSON.stringify(params),
+      headers: {
+        authorization: "Basic a2lwdW1pOllsNHR5cTN2",
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json"
+      }
+    }
+    fetch("https://kipumi.us5.instawp.xyz/wp-json/wp/v2/posts", options)
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response)
+      })
     return true
   }
 
